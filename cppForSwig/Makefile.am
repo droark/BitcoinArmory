@@ -262,6 +262,9 @@ if BUILD_LIBCAP_SUPPORT
 ArmoryDB_LDADD += $(LIBCAP_LIBS)
 endif
 ArmoryDB_LDFLAGS = $(LDFLAGS) -static
+if BUILD_LINUX
+ArmoryDB_LDFLAGS += -ldl
+endif
 
 # KeyManager binary
 bin_PROGRAMS += BIP150KeyManager
